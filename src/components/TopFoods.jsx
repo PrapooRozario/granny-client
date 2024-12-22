@@ -19,7 +19,7 @@ const TopFoods = () => {
   return (
     <div className="container mx-auto px-4 py-10">
       <div className="text-center mb-8">
-        <h1 className="text-5xl font-semibold mb-4 text-black">Top Foods</h1>
+        <h1 className="text-4xl font-semibold mb-4 text-black">Top Foods</h1>
         <p className="text-lg text-black/60">
           Explore Our Most Popular Dishes, Loved by Customers for Their
           Unforgettable Taste and Quality.
@@ -36,7 +36,6 @@ const TopFoods = () => {
             ?.map((food) => (
               <div
                 key={food._id}
-                className="transition-transform duration-300 hover:scale-105"
               >
                 <FoodCard food={food} />
               </div>
