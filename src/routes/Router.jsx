@@ -6,6 +6,7 @@ import Register from "@/pages/Register";
 import AllFoods from "@/pages/AllFoods";
 import FoodDetails from "@/pages/FoodDetails";
 import useAxios from "@/hooks/useAxios";
+import FoodPurchase from "@/pages/FoodPurchase";
 const Axios = useAxios();
 export const router = createBrowserRouter([
   {
@@ -32,6 +33,10 @@ export const router = createBrowserRouter([
         path: "/food/details/:id",
         element: <FoodDetails></FoodDetails>,
         loader: ({ params }) => Axios.get(`/foods/details/${params.id}`),
+      },
+      {
+        path: "/food/purchase/:id",
+        element: <FoodPurchase></FoodPurchase>,
       },
     ],
   },
