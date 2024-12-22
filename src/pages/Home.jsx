@@ -15,7 +15,7 @@ const Home = () => {
       <section className="mb-16">
         <ExpensiveDishes></ExpensiveDishes>
       </section>
-      <section>
+      <section className="mb-10">
         <CustomerTestimonials></CustomerTestimonials>
       </section>
     </div>

@@ -5,7 +5,6 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "swiper/css/scrollbar";
 import { Autoplay, Navigation, Pagination } from "swiper/modules";
-import Login from "@/pages/Login";
 import BannerContent from "./BannerContent";
 const Banner = () => {
   return (

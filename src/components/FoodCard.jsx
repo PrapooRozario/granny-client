@@ -1,17 +1,14 @@
 import { FaDollarSign } from "react-icons/fa6";
 import { Link } from "react-router-dom";
-
+import PropTypes from "prop-types";
 const FoodCard = ({ food }) => {
   const {
     _id,
     foodName,
     foodImage,
     foodCategory,
-    purchaseCount,
     description,
-    foodOrigin,
     price,
-    quantity,
   } = food;
   return (
     <div className="flex flex-col bg-white border border-slate-200 rounded-lg">
@@ -39,6 +36,10 @@ const FoodCard = ({ food }) => {
       </div>
     </div>
   );
+};
+
+FoodCard.propTypes = {
+  food: PropTypes.object,
 };
 
 export default FoodCard;

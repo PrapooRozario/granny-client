@@ -36,7 +36,7 @@ const Navbar = () => {
             </NavLink>
           </ul>
         </div>
-        <Link className="text-2xl text-black font-semibold">
+        <Link to="/" className="text-2xl text-black font-semibold">
           Gra<span className="text-yellow-500">nny</span>
         </Link>
       </div>
