@@ -22,12 +22,8 @@ const FoodCard = ({ food }) => {
         <p className="text-sm bg-yellow-100 font-medium w-fit px-3 py-1 rounded-full my-2">
           {foodCategory}
         </p>
-        <h6 className="mb-2 text-xl font-semibold">
-          {foodName}
-        </h6>
-        <p className="leading-normal font-light line-clamp-2">
-          {description}
-        </p>
+        <h6 className="mb-2 text-xl font-semibold">{foodName}</h6>
+        <p className="leading-normal font-light line-clamp-2">{description}</p>
       </div>
       <div className="px-4 pb-4 pt-0 mt-2 flex items-center justify-between">
         <p className="text-black flex items-center text-xl font-medium">

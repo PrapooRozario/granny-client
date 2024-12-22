@@ -1,4 +1,5 @@
 import Banner from "@/components/Banner";
+import CustomerTestimonials from "@/components/CustomerTestimonials";
 import ExpensiveDishes from "@/components/ExpensiveDishes";
 import TopFoods from "@/components/TopFoods";
 
@@ -11,8 +12,11 @@ const Home = () => {
       <section className="my-16">
         <TopFoods></TopFoods>
       </section>
-      <section>
+      <section className="mb-16">
         <ExpensiveDishes></ExpensiveDishes>
+      </section>
+      <section>
+        <CustomerTestimonials></CustomerTestimonials>
       </section>
     </div>
   );
