@@ -7,6 +7,7 @@ import AllFoods from "@/pages/AllFoods";
 import FoodDetails from "@/pages/FoodDetails";
 import useAxios from "@/hooks/useAxios";
 import FoodPurchase from "@/pages/FoodPurchase";
+import PrivateRoute from "./PrivateRoute";
 const Axios = useAxios();
 export const router = createBrowserRouter([
   {
@@ -36,7 +37,11 @@ export const router = createBrowserRouter([
       },
       {
         path: "/food/purchase/:id",
-        element: <FoodPurchase></FoodPurchase>,
+        element: (
+          <PrivateRoute>
+            <FoodPurchase></FoodPurchase>,
+          </PrivateRoute>
+        ),
       },
     ],
   },

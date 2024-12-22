@@ -4,10 +4,12 @@ import { useAuth } from "@/hooks/useAuth";
 import { Input } from "@chakra-ui/react";
 import toast from "react-hot-toast";
 import { FaGoogle } from "react-icons/fa6";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 
 const Login = () => {
   const { loginAuth, setUser, googleAuth } = useAuth();
+  const { state } = useLocation();
+  const navigate = useNavigate();
   const handleLogin = (e) => {
     e.preventDefault();
     const form = e.target;
@@ -19,6 +21,7 @@ const Login = () => {
           toast.success("Login successful! Welcome back!", {
             duration: 3000,
           });
+        navigate(state ? state : "/");
       })
       .catch((err) => {
         console.log(err),
@@ -64,6 +67,7 @@ const Login = () => {
                   toast.success("Login successful! Welcome back!", {
                     duration: 3000,
                   });
+                navigate(state ? state : "/");
               })
               .catch((err) => {
                 console.log(err);
