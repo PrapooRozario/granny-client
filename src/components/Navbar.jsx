@@ -1,7 +1,6 @@
 import { useAuth } from "@/hooks/useAuth";
 import { Menu } from "lucide-react";
 import { Link, NavLink } from "react-router-dom";
-
 const Navbar = () => {
   const { user, signOutAuth } = useAuth();
   console.log(user);
@@ -23,13 +22,13 @@ const Navbar = () => {
               Home
             </NavLink>
             <NavLink
-              to="/"
+              to="/all/foods"
               className="hover:text-yellow-600 transition duration-300"
             >
               All Foods
             </NavLink>
             <NavLink
-              to="/"
+              to="/gallery"
               className="hover:text-yellow-600 transition duration-300"
             >
               Gallery
@@ -49,13 +48,13 @@ const Navbar = () => {
             Home
           </NavLink>
           <NavLink
-            to="/"
+            to="/all/foods"
             className="hover:text-yellow-600 transition duration-300"
           >
             All Foods
           </NavLink>
           <NavLink
-            to="/"
+            to="/gallery"
             className="hover:text-yellow-600 transition duration-300"
           >
             Gallery
