@@ -2,40 +2,82 @@ import { Field } from "@/components/ui/field";
 import { PasswordInput } from "@/components/ui/password-input";
 import { useAuth } from "@/hooks/useAuth";
 import { Input } from "@chakra-ui/react";
+import { useState } from "react";
 import toast from "react-hot-toast";
 import { FaGoogle } from "react-icons/fa6";
 import { Link } from "react-router-dom";
-
-const Login = () => {
-  const { loginAuth, setUser, googleAuth } = useAuth();
-  const handleLogin = (e) => {
+const Register = () => {
+  const { registerAuth, setUser, updateUserAuth, googleAuth } = useAuth();
+  const [error, setError] = useState({});
+  const handleRegister = (e) => {
     e.preventDefault();
+    setError({});
     const form = e.target;
+    const name = form.name.value;
+    const photo = form.photo.value;
     const email = form.email.value;
     const password = form.password.value;
-    loginAuth(email, password)
+    if (!/[A-Z]/.test(password)) {
+      setError({
+        pwdError: "Password must include at least one uppercase letter.",
+      });
+      return;
+    }
+    if (!/[a-z]/.test(password)) {
+      setError({
+        pwdError: "Password must include at least one lowercase letter.",
+      });
+      return;
+    }
+    if (password.length <= 6) {
+      setError({
+        pwdError: "Password must be at least 6 characters long.",
+      });
+      return;
+    }
+    registerAuth(email, password)
       .then((user) => {
         setUser(user?.user),
-          toast.success("Login successful! Welcome back!", {
+          updateUserAuth(name, photo),
+          toast.success("Registration complete! Welcome to Granny.", {
             duration: 3000,
           });
       })
       .catch((err) => {
-        console.log(err),
+        if (err.code === "auth/email-already-in-use") {
+          toast.error(
+            "This email address is already registered. Please use a different email.",
+            { duration: 3000 }
+          );
+        } else {
           toast.error("Something went wrong. Please try again later", {
             duration: 3000,
           });
+        }
       });
   };
   return (
     <div>
       <form
-        onSubmit={handleLogin}
+        onSubmit={handleRegister}
         className="lg:w-2/5 md:w-7/12 sm:w-3/5 mx-auto py-10 px-10 my-8 rounded-xl"
       >
         <h1 className="text-center font-semibold text-2xl mb-10 text-black">
-          Login Your Account
+          Register Your Account
         </h1>
+
+        <Field label="Name" required className="mb-6">
+          <Input name="name" className="px-2" placeholder="Enter your name" />
+        </Field>
+
+        <Field label="Photo URL" required className="mb-6">
+          <Input
+            name="photo"
+            className="px-2"
+            placeholder="Enter your photo url"
+          />
+        </Field>
+
         <Field label="Email" required className="mb-6">
           <Input className="px-2" name="email" placeholder="Enter your email" />
         </Field>
@@ -45,14 +87,15 @@ const Login = () => {
             className="px-2"
             placeholder="Enter your password"
           ></PasswordInput>
+          <p className="text-sm text-red-500">{error?.pwdError}</p>
         </Field>
         <button className="bg-yellow-400 w-full py-2 rounded-xl mt-6">
-          Login
+          Register
         </button>
         <p className="text-sm mt-2 text-center">
-          Don't Have an Account ? {""}
-          <Link to="/register" className="text-yellow-600">
-            Register
+          Already Have an Account ? {""}
+          <Link to="/login" className="text-yellow-600">
+            Login
           </Link>
         </p>
         <div className="divider text-black">OR</div>
@@ -61,7 +104,7 @@ const Login = () => {
             googleAuth()
               .then((user) => {
                 setUser(user.user),
-                  toast.success("Login successful! Welcome back!", {
+                  toast.success("Registration complete! Welcome to Granny.", {
                     duration: 3000,
                   });
               })
@@ -82,4 +125,4 @@ const Login = () => {
   );
 };
 
-export default Login;
+export default Register;
