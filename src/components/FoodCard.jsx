@@ -13,28 +13,41 @@ const FoodCard = ({ food }) => {
     price,
   } = food;
   return (
-    <div className="flex flex-col bg-white border border-slate-200 rounded-lg">
+    <div className="flex flex-col bg-white border border-slate-200 rounded-lg h-full">
       <div className="h-56 m-2.5 overflow-hidden text-white rounded-md">
-        <img src={foodImage} alt="card-image" />
-          </div>
-          
-      <div className="p-4">
-        <p className="text-sm bg-yellow-100 font-medium w-fit px-3 py-1 rounded-full my-2">
+        <img
+          src={foodImage}
+          alt="card-image"
+          className="w-full h-full object-cover"
+        />
+      </div>
+
+      <div className="flex-grow p-4">
+        <p className="text-sm bg-yellow-100 font-medium w-fit px-3 py-1 rounded-full mb-2">
           {foodCategory}
         </p>
-        <h6 className="mb-2 text-xl font-semibold">{foodName}</h6>
-        <p className="leading-normal font-light line-clamp-2">{description}</p>
-      <p className="flex items-center font-medium gap-2 mt-4">
-        <BoxIcon className="text-xl"></BoxIcon> Quantity : {quantity}
-      </p>
-      </div>
-      <div className="px-4 pb-4 pt-0 mt-2 flex items-center justify-between">
-        <p className="text-black flex items-center text-xl font-medium">
-          <FaDollarSign></FaDollarSign> {price}
+
+        <h6 className="text-xl font-semibold text-slate-800 mb-2">
+          {foodName}
+        </h6>
+
+        <p className="text-sm text-slate-600 leading-relaxed line-clamp-2">
+          {description}
         </p>
+
+        <p className="flex items-center font-medium text-sm text-slate-800 gap-2 mt-4">
+          <BoxIcon className="text-xl" /> Quantity: {quantity}
+        </p>
+      </div>
+
+      <div className="p-4 flex items-center justify-between">
+        <p className="text-lg font-medium text-slate-800 flex items-center gap-1">
+          <FaDollarSign /> {price}
+        </p>
+
         <Link
           to={`/food/details/${_id}`}
-          className="rounded-md bg-yellow-500 py-2 px-4 border border-transparent text-center text-sm text-black transition-all shadow-md hover:shadow-lg"
+          className="rounded-md bg-yellow-500 py-2 px-4 border border-transparent text-sm text-black transition-all shadow-md hover:shadow-lg"
           type="button"
         >
           View Food

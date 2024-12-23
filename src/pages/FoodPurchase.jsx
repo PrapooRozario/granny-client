@@ -2,17 +2,15 @@ import { Field } from "@/components/ui/field";
 import { useAuth } from "@/hooks/useAuth";
 import useAxios from "@/hooks/useAxios";
 import { Input } from "@chakra-ui/react";
-import { useMutation, useQuery } from "@tanstack/react-query";
+import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
 import moment from "moment/moment";
 import toast from "react-hot-toast";
 import { useLocation, useNavigate, useParams } from "react-router-dom";
 const FoodPurchase = () => {
   const { id } = useParams();
-  const { state } = useLocation();
-  const navigate = useNavigate();
   const Axios = useAxios();
   const { user } = useAuth();
-
+  const queryClient = useQueryClient();
   const { mutate, isPending } = useMutation({
     mutationFn: (newPurchase) => {
       return Axios.post(
@@ -21,10 +19,10 @@ const FoodPurchase = () => {
       );
     },
     onSuccess: () => {
+      queryClient.invalidateQueries(["foods"]);
       toast.success("Purchase Successful!", {
         duration: 3000,
       });
-      navigate(state ? state : "/");
     },
     onError: () => {
       toast.error("Something went wrong! Please try again.", {

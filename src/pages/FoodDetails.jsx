@@ -1,9 +1,8 @@
 import { FaChartLine } from "react-icons/fa6";
-import { Link, useLoaderData, useLocation } from "react-router-dom";
+import { Link, useLoaderData } from "react-router-dom";
 import { FaShoppingCart } from "react-icons/fa";
 const FoodDetails = () => {
   const { data: food } = useLoaderData();
-  const location = useLocation();
   return (
     <div>
       <div className="w-4/5 mx-auto p-6 my-6 bg-white rounded-lg">
@@ -49,7 +48,7 @@ const FoodDetails = () => {
               </p>
             </div>
 
-            <Link state={location?.pathname} to={`/food/purchase/${food?._id}`}>
+            <Link to={`/food/purchase/${food?._id}`}>
               <button className="bg-yellow-500 text-black px-6 mt-4 py-2 rounded-lg hover:bg-yellow-600 transition">
                 Purchase Now
               </button>

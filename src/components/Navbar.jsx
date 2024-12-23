@@ -84,7 +84,7 @@ const Navbar = () => {
                 className="menu menu-sm dropdown-content *:text-black *:font-medium *:text-base bg-base-100 shadow rounded-lg px-4 py-4 space-y-2 mt-4 z-[2] w-52 "
               >
                 <NavLink
-                  to="/"
+                  to="/add/food/me"
                   className="hover:text-yellow-600 transition duration-300"
                 >
                   My Foods

@@ -10,6 +10,7 @@ import FoodPurchase from "@/pages/FoodPurchase";
 import PrivateRoute from "./PrivateRoute";
 import Gallery from "@/pages/Gallery";
 import AddFood from "@/pages/AddFood";
+import MyFoods from "@/pages/MyFoods";
 const Axios = useAxios();
 export const router = createBrowserRouter([
   {
@@ -54,6 +55,14 @@ export const router = createBrowserRouter([
         element: (
           <PrivateRoute>
             <AddFood></AddFood>,
+          </PrivateRoute>
+        ),
+      },
+      {
+        path: "/add/food/me",
+        element: (
+          <PrivateRoute>
+            <MyFoods></MyFoods>
           </PrivateRoute>
         ),
       },
