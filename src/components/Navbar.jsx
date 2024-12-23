@@ -96,7 +96,7 @@ const Navbar = () => {
                   Add food
                 </NavLink>
                 <NavLink
-                  to="/"
+                  to="/orders/me"
                   className="hover:text-yellow-600 transition duration-300"
                 >
                   My Orders

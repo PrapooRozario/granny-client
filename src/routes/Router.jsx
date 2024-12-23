@@ -11,6 +11,7 @@ import PrivateRoute from "./PrivateRoute";
 import Gallery from "@/pages/Gallery";
 import AddFood from "@/pages/AddFood";
 import MyFoods from "@/pages/MyFoods";
+import MyOrders from "@/pages/MyOrders";
 const Axios = useAxios();
 export const router = createBrowserRouter([
   {
@@ -63,6 +64,14 @@ export const router = createBrowserRouter([
         element: (
           <PrivateRoute>
             <MyFoods></MyFoods>
+          </PrivateRoute>
+        ),
+      },
+      {
+        path: "/orders/me",
+        element: (
+          <PrivateRoute>
+            <MyOrders></MyOrders>
           </PrivateRoute>
         ),
       },

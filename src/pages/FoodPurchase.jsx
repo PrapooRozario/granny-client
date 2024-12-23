@@ -32,7 +32,7 @@ const FoodPurchase = () => {
   });
   const handleSubmit = (e) => {
     e.preventDefault();
-    const buying_date = moment().format("LLL");
+    const buying_date = moment().format("ll");
     const form = e.target;
     const foodName = form.foodName.value;
     const price = form.price.value;

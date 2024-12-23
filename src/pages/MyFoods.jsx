@@ -13,7 +13,6 @@ const MyFoods = () => {
       return data;
     },
   });
-  console.log(foods);
   return (
     <div className="my-10">
       <div className="text-center mb-8">
