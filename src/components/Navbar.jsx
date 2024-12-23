@@ -5,7 +5,6 @@ import { Link, NavLink } from "react-router-dom";
 const Navbar = () => {
   const { user, signOutAuth } = useAuth();
   const [isDark, setIsDark] = useState(false);
-  console.log(user);
   const toggleTheme = () => {
     setIsDark(!isDark);
     document.documentElement.classList.toggle("dark", !isDark);

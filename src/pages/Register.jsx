@@ -108,8 +108,7 @@ const Register = () => {
                     duration: 3000,
                   });
               })
-              .catch((err) => {
-                console.log(err);
+              .catch(() => {
                 toast.error("Something went wrong. Please try again later", {
                   duration: 3000,
                 });

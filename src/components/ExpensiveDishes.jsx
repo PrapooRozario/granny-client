@@ -32,7 +32,7 @@ const ExpensiveDishes = () => {
               ?.sort((a, b) => b?.price - a?.price)
               ?.slice(0, 6)
               ?.map((food) => (
-                <FoodCard key={food} food={food}></FoodCard>
+                <FoodCard key={food?._id} food={food}></FoodCard>
               ))}
           </div>
         </div>

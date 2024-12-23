@@ -76,7 +76,6 @@ const FoodPurchase = () => {
       buyer_name,
       buying_date,
     };
-    console.log(purchase);
     if (food?.quantity > 0) {
       mutate(purchase);
     }

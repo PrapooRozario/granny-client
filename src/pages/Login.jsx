@@ -23,8 +23,7 @@ const Login = () => {
           });
         navigate(state ? state : "/");
       })
-      .catch((err) => {
-        console.log(err),
+      .catch(() => {
           toast.error("Something went wrong. Please try again later", {
             duration: 3000,
           });
@@ -69,8 +68,7 @@ const Login = () => {
                   });
                 navigate(state ? state : "/");
               })
-              .catch((err) => {
-                console.log(err);
+              .catch(() => {
                 toast.error("Something went wrong. Please try again later", {
                   duration: 3000,
                 });
