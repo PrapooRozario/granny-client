@@ -23,7 +23,7 @@ const FoodCard = ({ food }) => {
       </div>
 
       <div className="flex-grow p-4">
-        <p className="text-sm bg-yellow-100 font-medium w-fit px-3 py-1 rounded-full mb-2">
+        <p className="text-sm bg-yellow-100 font-medium dark:text-black w-fit px-3 py-1 rounded-full mb-2">
           {foodCategory}
         </p>
 
@@ -47,7 +47,7 @@ const FoodCard = ({ food }) => {
 
         <Link
           to={`/food/details/${_id}`}
-          className="rounded-md bg-yellow-500 py-2 px-4 border border-transparent text-sm text-black transition-all shadow-md hover:shadow-lg"
+          className="rounded-md bg-yellow-500 py-2 px-4 border border-transparent text-sm text-black dark:text-white transition-all shadow-md hover:shadow-lg"
           type="button"
         >
           View Food

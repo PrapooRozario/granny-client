@@ -15,16 +15,19 @@ const CustomerTestimonials = () => {
   return (
     <div>
       <div className="text-center mb-4">
-        <h1 className="text-4xl font-semibold mb-4 text-black">
+        <h1 className="text-4xl font-semibold mb-4 dark:text-white text-black">
           Customer Testimonials
         </h1>
-        <p className="text-lg text-black/60">
+        <p className="text-lg text-black/60 dark:text-white/60">
           Hear What Our Happy Customers Have to Say About Their Unforgettable
           Dining Experiences!
         </p>
       </div>
       <div>
-        <Marquee gradient={true} gradientWidth={100}>
+        <Marquee
+          gradient={true}
+          gradientWidth={100}
+        >
           {testimonials?.map((testimonial) => (
             <div key={testimonial._id} className="ml-6">
               <div className="flex w-full p-4 max-w-lg flex-col rounded-lg bg-white shadow-sm border border-slate-200 my-6">

@@ -103,7 +103,7 @@ const FoodPurchase = () => {
           <Input
             name="foodName"
             value={food?.foodName}
-            className="px-3 py-2 border border-gray-300 rounded-lg w-full"
+            className="px-3 py-2 border border-gray-300 dark:placeholder-black dark:text-black rounded-lg w-full"
             placeholder="Enter the food name"
           />
         </Field>
@@ -113,7 +113,7 @@ const FoodPurchase = () => {
             name="price"
             type="number"
             value={food?.price}
-            className="px-3 py-2 border border-gray-300 rounded-lg w-full"
+            className="px-3 py-2 border border-gray-300 dark:placeholder-black dark:text-black rounded-lg w-full"
             placeholder="Enter the price"
           />
         </Field>
@@ -123,7 +123,7 @@ const FoodPurchase = () => {
             name="quantity"
             type="number"
             defaultValue={food?.quantity}
-            className="px-3 py-2 border border-gray-300 rounded-lg w-full"
+            className="px-3 py-2 border border-gray-300 dark:placeholder-black dark:text-black rounded-lg w-full"
             placeholder="Enter the quantity"
           />
         </Field>
@@ -131,7 +131,7 @@ const FoodPurchase = () => {
         <Field label="Buyer Name" required className="mb-6">
           <Input
             name="buyer_name"
-            className="px-3 py-2 border border-gray-300 rounded-lg w-full"
+            className="px-3 py-2 border border-gray-300 dark:placeholder-black dark:text-black rounded-lg w-full"
             placeholder="Enter the name"
             value={user?.displayName}
           />
@@ -141,7 +141,7 @@ const FoodPurchase = () => {
           <Input
             name="buyer_email"
             value={user?.email}
-            className="px-3 py-2 border border-gray-300 rounded-lg w-full"
+            className="px-3 py-2 border border-gray-300 dark:placeholder-black dark:text-black rounded-lg w-full"
             placeholder="Enter the email"
           />
         </Field>

@@ -66,7 +66,7 @@ const UserFoodCard = ({ food }) => {
   });
   return (
     <div className="flex flex-col bg-white border border-slate-200 rounded-lg h-full">
-      <div className="h-56 m-2.5 overflow-hidden text-white rounded-md">
+      <div className="h-56 m-2.5 overflow-hidden text-white dark:text-black rounded-md">
         <img
           src={food?.foodImage}
           alt="card-image"
@@ -75,7 +75,7 @@ const UserFoodCard = ({ food }) => {
       </div>
 
       <div className="flex-grow p-4">
-        <p className="text-sm bg-yellow-100 font-medium w-fit px-3 py-1 rounded-full mb-2">
+        <p className="text-sm bg-yellow-100 dark:text-black font-medium w-fit px-3 py-1 rounded-full mb-2">
           {food?.foodCategory}
         </p>
 
@@ -108,7 +108,7 @@ const UserFoodCard = ({ food }) => {
           </DialogTrigger>
           <DialogContent>
             <DialogHeader>
-              <DialogTitle className="text-center text-black font-bold text-3xl">
+              <DialogTitle className="text-center text-black dark:text-white  font-bold text-3xl">
                 Update Food
               </DialogTitle>
             </DialogHeader>
@@ -118,7 +118,7 @@ const UserFoodCard = ({ food }) => {
                   <Input
                     name="foodName"
                     defaultValue={food?.foodName}
-                    className="px-3 py-2 border border-gray-300 rounded-lg w-full"
+                    className="px-3 py-2 border border-gray-300 dark:placeholder-white  rounded-lg w-full"
                     placeholder="Enter the food name"
                   />
                 </Field>
@@ -127,7 +127,7 @@ const UserFoodCard = ({ food }) => {
                   <Input
                     name="foodImage"
                     defaultValue={food?.foodImage}
-                    className="px-3 py-2 border border-gray-300 rounded-lg w-full"
+                    className="px-3 py-2 border border-gray-300 dark:placeholder-white  rounded-lg w-full"
                     placeholder="Enter the food image"
                   />
                 </Field>
@@ -136,7 +136,7 @@ const UserFoodCard = ({ food }) => {
                   <Input
                     name="foodCategory"
                     defaultValue={food?.foodCategory}
-                    className="px-3 py-2 border border-gray-300 rounded-lg w-full"
+                    className="px-3 py-2 border border-gray-300 dark:placeholder-white  rounded-lg w-full"
                     placeholder="Enter the food category"
                   />
                 </Field>
@@ -146,7 +146,7 @@ const UserFoodCard = ({ food }) => {
                     name="quantity"
                     defaultValue={food?.quantity}
                     type="number"
-                    className="px-3 py-2 border border-gray-300 rounded-lg w-full"
+                    className="px-3 py-2 border border-gray-300 dark:placeholder-white  rounded-lg w-full"
                     placeholder="Enter the quantity"
                   />
                 </Field>
@@ -156,7 +156,7 @@ const UserFoodCard = ({ food }) => {
                     name="price"
                     type="number"
                     defaultValue={food?.price}
-                    className="px-3 py-2 border border-gray-300 rounded-lg w-full"
+                    className="px-3 py-2 border border-gray-300 dark:placeholder-white  rounded-lg w-full"
                     placeholder="Enter the price"
                   />
                 </Field>
@@ -165,7 +165,7 @@ const UserFoodCard = ({ food }) => {
                   <Input
                     name="foodOrigin"
                     defaultValue={food?.foodOrigin}
-                    className="px-3 py-2 border border-gray-300 rounded-lg w-full"
+                    className="px-3 py-2 border border-gray-300 dark:placeholder-white  rounded-lg w-full"
                     placeholder="Enter the food origin"
                   />
                 </Field>
@@ -174,7 +174,7 @@ const UserFoodCard = ({ food }) => {
                   <Textarea
                     name="description"
                     defaultValue={food?.description}
-                    className="p-2 border border-gray-300 rounded-lg w-full"
+                    className="p-2 border border-gray-300 dark:placeholder-white  rounded-lg w-full"
                     placeholder="Write a description..."
                   ></Textarea>
                 </Field>
@@ -199,7 +199,6 @@ const UserFoodCard = ({ food }) => {
                         alt="Loading icon"
                       />
                     )}
-
                     Save
                   </button>
                 </DialogFooter>

@@ -7,14 +7,14 @@ import { Outlet } from "react-router-dom";
 const MainLayout = () => {
   const { loading } = useAuth();
   return (
-    <div className="w-11/12 mx-auto font-ubuntu">
+    <div className="font-ubuntu bg-white dark:bg-gray-800 text-black dark:text-white p-4">
       <Toaster />
       {loading ? (
         <div className="flex items-center justify-center h-screen">
           <div className="border-gray-300 h-16 w-16 animate-spin rounded-full border-8 border-t-blue-600" />
         </div>
       ) : (
-        <div>
+        <div className="w-11/12 mx-auto">
           <nav>
             <Navbar></Navbar>
           </nav>

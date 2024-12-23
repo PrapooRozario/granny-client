@@ -50,8 +50,10 @@ const MyOrders = () => {
   return (
     <div className="my-10">
       <div className="text-center mb-8">
-        <h1 className="text-4xl font-semibold mb-4 text-black">My Orders</h1>
-        <p className="text-lg text-black/60">
+        <h1 className="text-4xl font-semibold mb-4 text-black dark:text-white ">
+          My Orders
+        </h1>
+        <p className="text-lg text-black/60 dark:text-white/60 ">
           Track your placed orders and manage your food journey effortlessly.
         </p>
       </div>
@@ -108,7 +110,7 @@ const MyOrders = () => {
       )}
       <div className="flex items-center justify-center gap-4 mt-6">
         <button
-          disabled={currentPage <= 0} 
+          disabled={currentPage <= 0}
           onClick={() => setCurrentPage((prev) => Math.max(0, prev - 1))}
           className="py-2 px-5 font-medium bg-yellow-400 rounded-lg"
         >

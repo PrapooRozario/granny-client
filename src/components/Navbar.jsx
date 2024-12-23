@@ -1,11 +1,17 @@
 import { useAuth } from "@/hooks/useAuth";
-import { Menu } from "lucide-react";
+import { Menu, MoonIcon, SunDimIcon } from "lucide-react";
+import { useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 const Navbar = () => {
   const { user, signOutAuth } = useAuth();
+  const [isDark, setIsDark] = useState(false);
   console.log(user);
+  const toggleTheme = () => {
+    setIsDark(!isDark);
+    document.documentElement.classList.toggle("dark", !isDark);
+  };
   return (
-    <div className="navbar bg-base-100">
+    <div className="navbar">
       <div className="navbar-start">
         <div className="dropdown">
           <div tabIndex={0} role="button" className="mr-3 lg:hidden">
@@ -40,7 +46,7 @@ const Navbar = () => {
         </Link>
       </div>
       <div className="navbar-center hidden lg:flex">
-        <ul className="menu menu-horizontal *:text-black *:font-medium *:text-base gap-6 px-1">
+        <ul className="menu menu-horizontal *:text-black *:dark:text-white *:font-medium *:text-base gap-6 px-1">
           <NavLink
             to="/"
             className="hover:text-yellow-600 transition duration-300"
@@ -63,6 +69,9 @@ const Navbar = () => {
       </div>
 
       <div className="navbar-end">
+        <button onClick={toggleTheme} className="py-2 px-4">
+          {isDark ? <SunDimIcon></SunDimIcon> : <MoonIcon></MoonIcon>}
+        </button>
         {user && user?.email ? (
           <div className="flex items-center gap-2">
             <div className="dropdown dropdown-end">

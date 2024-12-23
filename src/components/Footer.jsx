@@ -8,9 +8,9 @@ import { Link, NavLink } from "react-router-dom";
 
 const Footer = () => {
   return (
-    <footer className="w-full bg-white p-8">
-      <div className="flex flex-row flex-wrap items-center justify-center gap-y-6 gap-x-12 bg-white text-center md:justify-between">
-        <Link to="/" className="text-2xl text-black font-semibold">
+    <footer className="w-full bg-white dark:bg-[#1f2937] p-8">
+      <div className="flex flex-row flex-wrap items-center justify-center gap-y-6 gap-x-12 bg-white dark:bg-[#1f2937] text-center md:justify-between">
+        <Link to="/" className="text-2xl text-blackfont-semibold">
           Gra<span className="text-yellow-500">nny</span>
         </Link>
 
@@ -22,13 +22,13 @@ const Footer = () => {
             Home
           </NavLink>
           <NavLink
-            to="/"
+            to="/all/foods"
             className="hover:text-yellow-600 transition duration-300"
           >
             All Foods
           </NavLink>
           <NavLink
-            to="/"
+            to="/gallery"
             className="hover:text-yellow-600 transition duration-300"
           >
             Gallery

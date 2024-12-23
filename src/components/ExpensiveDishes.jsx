@@ -19,10 +19,10 @@ const ExpensiveDishes = () => {
       ) : (
         <div>
           <div className="text-center mb-8">
-            <h1 className="text-4xl font-semibold mb-4 text-black">
+            <h1 className="text-4xl font-semibold mb-4 text-black dark:text-white">
               Expensive Dishes
             </h1>
-            <p className="text-lg text-black/60">
+            <p className="text-lg text-black/60 dark:text-white/60">
               Explore Our Finest and Most Exquisite Culinary Masterpieces,
               Crafted for a Premium Dining Experience!
             </p>

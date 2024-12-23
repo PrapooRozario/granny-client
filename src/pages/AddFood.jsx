@@ -59,7 +59,7 @@ const AddFood = () => {
           Add Food
         </h1>
 
-        <Field label="Food Name" required className="mb-6">
+        <Field label="Food Name" required className="mb-6 dark:text-black">
           <Input
             name="foodName"
             className="px-3 py-2 border border-gray-300 rounded-lg w-full"
@@ -67,7 +67,7 @@ const AddFood = () => {
           />
         </Field>
 
-        <Field label="Food Image" required className="mb-6">
+        <Field label="Food Image" required className="mb-6  dark:text-black">
           <Input
             name="foodImage"
             className="px-3 py-2 border border-gray-300 rounded-lg w-full"
@@ -75,7 +75,7 @@ const AddFood = () => {
           />
         </Field>
 
-        <Field label="Food Category" required className="mb-6">
+        <Field label="Food Category" required className="mb-6  dark:text-black">
           <Input
             name="foodCategory"
             className="px-3 py-2 border border-gray-300 rounded-lg w-full"
@@ -83,7 +83,7 @@ const AddFood = () => {
           />
         </Field>
 
-        <Field label="Quantity" required className="mb-6">
+        <Field label="Quantity" required className="mb-6  dark:text-black">
           <Input
             name="quantity"
             type="number"
@@ -92,7 +92,7 @@ const AddFood = () => {
           />
         </Field>
 
-        <Field label="Price" required className="mb-6">
+        <Field label="Price" required className="mb-6  dark:text-black">
           <Input
             name="price"
             type="number"
@@ -101,7 +101,7 @@ const AddFood = () => {
           />
         </Field>
 
-        <Field label="Food Origin" required className="mb-6">
+        <Field label="Food Origin" required className="mb-6  dark:text-black">
           <Input
             name="foodOrigin"
             className="px-3 py-2 border border-gray-300 rounded-lg w-full"
@@ -109,7 +109,7 @@ const AddFood = () => {
           />
         </Field>
 
-        <Field label="Description" required className="mb-6">
+        <Field label="Description" required className="mb-6  dark:text-black">
           <Textarea
             name="description"
             className="p-2"
