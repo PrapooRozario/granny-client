@@ -5,11 +5,15 @@ import { Toaster } from "react-hot-toast";
 import { Outlet } from "react-router-dom";
 
 const MainLayout = () => {
-  const { user } = useAuth();
+  const { loading } = useAuth();
   return (
     <div className="w-11/12 mx-auto font-ubuntu">
       <Toaster />
-      {user && user?.email ? (
+      {loading ? (
+        <div className="flex items-center justify-center h-screen">
+          <div className="border-gray-300 h-16 w-16 animate-spin rounded-full border-8 border-t-blue-600" />
+        </div>
+      ) : (
         <div>
           <nav>
             <Navbar></Navbar>
@@ -20,10 +24,6 @@ const MainLayout = () => {
           <footer>
             <Footer></Footer>
           </footer>
-        </div>
-      ) : (
-        <div className="flex items-center justify-center h-screen">
-          <div className="border-gray-300 h-16 w-16 animate-spin rounded-full border-8 border-t-blue-600" />
         </div>
       )}
     </div>

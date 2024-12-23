@@ -13,6 +13,7 @@ import { auth } from "@/firebase/firebase.config";
 export const AuthContext = createContext();
 const AuthProvider = ({ children }) => {
   const [user, setUser] = useState([]);
+  const [loading, setLoading] = useState(true);
   const googleProvider = new GoogleAuthProvider();
   const loginAuth = (email, password) => {
     return signInWithEmailAndPassword(auth, email, password);
@@ -30,13 +31,14 @@ const AuthProvider = ({ children }) => {
   };
 
   const googleAuth = () => {
-   return signInWithPopup(auth, googleProvider);
+    return signInWithPopup(auth, googleProvider);
   };
   const signOutAuth = () => {
     signOut(auth);
   };
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
+      setLoading(false);
       setUser(currentUser);
     });
     return () => unsubscribe();
@@ -46,6 +48,7 @@ const AuthProvider = ({ children }) => {
     loginAuth,
     registerAuth,
     user,
+    loading,
     setUser,
     updateUserAuth,
     googleAuth,

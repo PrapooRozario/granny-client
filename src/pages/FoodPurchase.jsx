@@ -24,7 +24,7 @@ const FoodPurchase = () => {
       toast.success("Purchase Successful!", {
         duration: 3000,
       });
-      navigate(state);
+      navigate(state ? state : "/");
     },
     onError: () => {
       toast.error("Something went wrong! Please try again.", {
@@ -42,7 +42,7 @@ const FoodPurchase = () => {
     const buyer_email = form.buyer_email.value;
     const buyer_name = form.buyer_name.value;
 
-    if (food?.added_by === user?.email) {
+    if (food?.added_by?.email === user?.email) {
       return toast.error(
         "You cannot purchase this item because you are the one who added it.",
         {
@@ -71,13 +71,14 @@ const FoodPurchase = () => {
 
     const purchase = {
       foodName,
-      price,
-      quantity,
+      price: parseInt(price),
+      quantity: parseInt(quantity),
       food_id: food?._id,
       buyer_email,
       buyer_name,
       buying_date,
     };
+    console.log(purchase);
     if (food?.quantity > 0) {
       mutate(purchase);
     }
@@ -112,6 +113,7 @@ const FoodPurchase = () => {
         <Field label="Price" required className="mb-6">
           <Input
             name="price"
+            type="number"
             value={food?.price}
             className="px-3 py-2 border border-gray-300 rounded-lg w-full"
             placeholder="Enter the price"
@@ -121,6 +123,7 @@ const FoodPurchase = () => {
         <Field label="Quantity" required className="mb-6">
           <Input
             name="quantity"
+            type="number"
             defaultValue={food?.quantity}
             className="px-3 py-2 border border-gray-300 rounded-lg w-full"
             placeholder="Enter the quantity"
@@ -146,7 +149,9 @@ const FoodPurchase = () => {
         </Field>
 
         <button
-          disabled={food?.quantity <= 0 || food?.added_by === user?.email}
+          disabled={
+            food?.quantity <= 0 || food?.added_by?.email === user?.email
+          }
           className="bg-yellow-500 w-full gap-2 flex items-center justify-center text-black font-medium py-2 px-4 rounded-lg hover:bg-yellow-600 transition"
         >
           {isPending && (

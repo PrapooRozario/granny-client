@@ -90,7 +90,7 @@ const Navbar = () => {
                   My Foods
                 </NavLink>
                 <NavLink
-                  to="/"
+                  to="/add/food"
                   className="hover:text-yellow-600 transition duration-300"
                 >
                   Add food
