@@ -113,7 +113,7 @@ const UserFoodCard = ({ food }) => {
               </DialogTitle>
             </DialogHeader>
             <DialogBody>
-              <form onSubmit={handleSubmit} className="mt-4">
+              <form onSubmit={handleSubmit} className="mt-4 dark:text-white">
                 <Field label="Food Name" required className="mb-6">
                   <Input
                     name="foodName"

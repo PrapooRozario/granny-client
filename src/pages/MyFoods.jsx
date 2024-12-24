@@ -26,7 +26,7 @@ const MyFoods = () => {
       </div>
       {foods?.length === 0 && (
         <div>
-          <p className="text-black/60 text-2xl my-5 text-center ">
+          <p className="text-black/60 dark:text-white/60 text-2xl my-5 text-center ">
             You haven't added any food items yet. Start adding delicious
             recipes! 🍳🍲
           </p>

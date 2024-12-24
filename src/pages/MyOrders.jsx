@@ -59,7 +59,7 @@ const MyOrders = () => {
       </div>
       {orders?.length === 0 && (
         <div>
-          <p className="text-black/60 text-2xl my-5 text-center ">
+          <p className="text-black/60 dark:text-white/60 text-2xl my-5 text-center ">
             You have no orders yet! Start ordering your favorite dishes now.
             🍔🍕
           </p>
@@ -83,11 +83,11 @@ const MyOrders = () => {
               </div>
 
               <div className="p-4">
-                <h3 className="text-xl font-semibold mb-2">
+                <h3 className="text-xl dark:text-black font-semibold mb-2">
                   {order?.foodName}
                 </h3>
-                <p className="mb-2">
-                  Price: <span className="font-medium">${order?.price}</span>
+                <p className="mb-2 dark:text-black">
+                  Price: <span className="font-medium dark:text-black">${order?.price}</span>
                 </p>
                 <p className="text-sm text-black/60">
                   Owner:{" "}
