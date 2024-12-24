@@ -12,11 +12,13 @@ import Gallery from "@/pages/Gallery";
 import AddFood from "@/pages/AddFood";
 import MyFoods from "@/pages/MyFoods";
 import MyOrders from "@/pages/MyOrders";
+import ErrorPage from "@/pages/ErrorPage";
 const Axios = useAxios();
 export const router = createBrowserRouter([
   {
     path: "/",
     element: <MainLayout></MainLayout>,
+    errorElement: <ErrorPage></ErrorPage>,
     children: [
       {
         path: "/",

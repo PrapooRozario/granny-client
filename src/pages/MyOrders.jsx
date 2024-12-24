@@ -57,6 +57,14 @@ const MyOrders = () => {
           Track your placed orders and manage your food journey effortlessly.
         </p>
       </div>
+      {orders?.length === 0 && (
+        <div>
+          <p className="text-black/60 text-2xl my-5 text-center ">
+            You have no orders yet! Start ordering your favorite dishes now.
+            🍔🍕
+          </p>
+        </div>
+      )}
       {isLoading ? (
         <div className="border-gray-300 h-12 w-12 mx-auto my-10 animate-spin rounded-full border-8 border-t-yellow-600" />
       ) : (

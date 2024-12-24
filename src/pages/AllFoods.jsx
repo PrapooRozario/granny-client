@@ -27,7 +27,7 @@ const AllFoods = () => {
           <h1 className="mb-5 text-5xl font-bold text-white">All Foods</h1>
         </div>
       </div>
-      <div className="w-1/2 mx-auto mt-6">
+      <div className="lg:w-1/2 md:w-2/3 mx-auto mt-6">
         <input
           onChange={(e) => setSearch(e.target.value)}
           type="search"

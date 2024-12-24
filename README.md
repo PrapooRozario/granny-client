@@ -12,7 +12,10 @@ Granny is a full-stack restaurant management platform designed to streamline bot
 - **User-Friendly Interface**: Modern design for easy navigation and interaction.
 - **Menu Management**: Staff can easily update and manage the restaurant’s menu.
 - **Order Management**: Track customer orders in real-time.
-- **Customer Interaction**: Allow customers to view menus, place orders, and make payments.
+- **Customer Interaction**: Allow customers to view menus, place orders.
+- **Order History**: Customers can view a detailed history of their past purchases, including order details.
+- **Mobile Responsiveness**: Fully responsive design to ensure optimal user experience across various devices (desktops, tablets, phones).
+
 ---
 
 ### NPM Packages Used:

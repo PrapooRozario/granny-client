@@ -24,7 +24,6 @@ const TopFoods = () => {
           Unforgettable Taste and Quality.
         </p>
       </div>
-
       {isLoading ? (
         <div className="border-gray-300 h-12 w-12 mx-auto mt-10 animate-spin rounded-full border-8 border-t-yellow-600" />
       ) : (
