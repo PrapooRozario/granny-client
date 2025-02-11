@@ -3,7 +3,7 @@ import { useQuery } from "@tanstack/react-query";
 import FoodCard from "./FoodCard";
 import { Link } from "react-router-dom";
 
-const TopFoods = () => {
+const RecentProducts = () => {
   const Axios = useAxios();
 
   const { data: foods, isLoading } = useQuery({
@@ -17,11 +17,11 @@ const TopFoods = () => {
     <div className="container mx-auto px-4">
       <div className="text-center mb-8">
         <h1 className="text-4xl font-semibold mb-4 text-black dark:text-white">
-          Top Foods
+          Recent Foods
         </h1>
         <p className="text-lg text-black/60  dark:text-white/60">
-          Explore Our Most Popular Dishes, Loved by Customers for Their
-          Unforgettable Taste and Quality.
+          Explore Our Recent Dishes, Loved by Customers for Their Unforgettable
+          Taste and Quality.
         </p>
       </div>
       {isLoading ? (
@@ -29,8 +29,8 @@ const TopFoods = () => {
       ) : (
         <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-5 mt-10">
           {foods
-            ?.sort((a, b) => b?.purchaseCount - a?.purchaseCount)
             ?.slice(0, 6)
+            ?.filter((food) => food?.purchaseCount === 0)
             ?.map((food) => (
               <div key={food._id}>
                 <FoodCard food={food} />
@@ -49,4 +49,4 @@ const TopFoods = () => {
   );
 };
 
-export default TopFoods;
+export default RecentProducts;
