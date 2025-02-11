@@ -2,14 +2,19 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
-import { Autoplay, EffectCreative, Navigation, Pagination } from "swiper/modules";
+import {
+  Autoplay,
+  EffectCreative,
+  Navigation,
+  Pagination,
+} from "swiper/modules";
 import "swiper/css/effect-creative";
 import BannerContent from "./BannerContent";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 const Banner = () => {
   return (
-    <div className="w-full relative">
-      <button className="custom-prev absolute text-black/80 bg-yellow-300/40 z-50 p-3 rounded-full left-4 top-1/2 transform -translate-y-1/2">
+    <div className="w-full relative mt-20">
+      <button className="custom-prev absolute text-black/80 bg-yellow-300/40 z-30 p-3 rounded-full left-4 top-1/2 transform -translate-y-1/2">
         <ChevronLeft className="text-3xl"></ChevronLeft>
       </button>
       <Swiper
@@ -64,7 +69,7 @@ const Banner = () => {
           ></BannerContent>
         </SwiperSlide>
       </Swiper>
-      <button className="custom-next absolute text-black/80 bg-yellow-300/40 z-50 p-3 rounded-full right-4 top-1/2 transform -translate-y-1/2">
+      <button className="custom-next absolute text-black/80 bg-yellow-300/40 z-30 p-3 rounded-full right-4 top-1/2 transform -translate-y-1/2">
         <ChevronRight className="text-3xl"></ChevronRight>
       </button>
     </div>
