@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 const BannerContent = ({ bgImage, title, subtitle }) => {
   return (
     <div
-      className="hero min-h-screen font-ubuntu"
+      className="hero min-h-[calc(100vh-150px)] font-ubuntu"
       style={{
         backgroundImage: `url(${bgImage})`,
       }}
@@ -12,7 +12,7 @@ const BannerContent = ({ bgImage, title, subtitle }) => {
       <div className="hero-content text-white text-center">
         <div>
           <h1 className="mb-4 text-4xl font-bold">{title}</h1>
-          <p className="mb-4">{subtitle}</p>
+          <p className="mb-4 text-white/70">{subtitle}</p>
           <Link to="/all/foods">
             <button className="px-8 font-medium py-3 bg-yellow-400 text-black rounded-lg">
               All Foods
