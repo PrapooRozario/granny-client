@@ -10,7 +10,7 @@ const Navbar = () => {
     document.documentElement.classList.toggle("dark", !isDark);
   };
   return (
-    <div className="navbar fixed top-0 w-11/12 z-50 bg-white dark:bg-gray-900 left-1/2 transform -translate-x-1/2 py-4">
+    <div className="navbar fixed top-0 w-11/12 z-50 bg-white dark:bg-[#1F2937] left-1/2 transform -translate-x-1/2 py-4">
       <div className="navbar-start">
         <div className="dropdown">
           <div tabIndex={0} role="button" className="mr-3 lg:hidden">
@@ -40,7 +40,7 @@ const Navbar = () => {
             </NavLink>
           </ul>
         </div>
-        <Link to="/" className="text-2xl text-black font-semibold">
+        <Link to="/" className="text-2xl font-semibold">
           Gra<span className="text-yellow-500">nny</span>
         </Link>
       </div>

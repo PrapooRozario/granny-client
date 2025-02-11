@@ -48,18 +48,18 @@ const MyOrders = () => {
   });
 
   return (
-    <div className="my-10">
+    <div className="my-20">
       <div className="text-center mb-8">
-        <h1 className="text-4xl font-semibold mb-4 text-black dark:text-white ">
+        <h1 className="text-4xl font-semibold mb-4 text-gray-900 dark:text-white">
           My Orders
         </h1>
-        <p className="text-lg text-black/60 dark:text-white/60 ">
+        <p className="text-lg text-gray-600 dark:text-gray-300">
           Track your placed orders and manage your food journey effortlessly.
         </p>
       </div>
       {orders?.length === 0 && (
         <div>
-          <p className="text-black/60 dark:text-white/60 text-2xl my-5 text-center ">
+          <p className="text-gray-600 dark:text-gray-300 text-2xl my-5 text-center">
             You have no orders yet! Start ordering your favorite dishes now.
             🍔🍕
           </p>
@@ -72,7 +72,7 @@ const MyOrders = () => {
           {orders?.map((order) => (
             <div
               key={order?._id}
-              className="flex flex-col bg-white border border-slate-200 rounded-lg"
+              className="flex flex-col bg-white dark:bg-gray-800 border border-slate-200 dark:border-gray-700 rounded-lg"
             >
               <div className="h-60 overflow-hidden rounded-t-md">
                 <img
@@ -83,27 +83,27 @@ const MyOrders = () => {
               </div>
 
               <div className="p-4">
-                <h3 className="text-xl dark:text-black font-semibold mb-2">
+                <h3 className="text-xl text-gray-900 dark:text-white font-semibold mb-2">
                   {order?.foodName}
                 </h3>
-                <p className="mb-2 dark:text-black">
-                  Price: <span className="font-medium dark:text-black">${order?.price}</span>
+                <p className="mb-2 text-gray-800 dark:text-gray-200">
+                  Price: <span className="font-medium">${order?.price}</span>
                 </p>
-                <p className="text-sm text-black/60">
+                <p className="text-sm text-gray-600 dark:text-gray-400">
                   Owner:{" "}
                   <span className="font-medium">{order?.added_by?.name}</span>
                 </p>
-                <p className="text-sm text-black/60">
+                <p className="text-sm text-gray-600 dark:text-gray-400">
                   Email:{" "}
                   <span className="font-medium">{order?.added_by?.email}</span>
                 </p>
-                <p className="text-black/60 mt-3">
+                <p className="text-gray-600 dark:text-gray-400 mt-3">
                   Purchased on:{" "}
                   <span className="font-medium">{order?.buying_date}</span>
                 </p>
               </div>
 
-              <div className="flex justify-end p-4 border-t border-gray-200">
+              <div className="flex justify-end p-4 border-t border-gray-200 dark:border-gray-700">
                 <button
                   onClick={() => mutate(order?._id)}
                   className="flex items-center gap-2 px-3 py-2 text-sm text-white bg-red-500 rounded-md shadow hover:bg-red-600"
@@ -120,17 +120,17 @@ const MyOrders = () => {
         <button
           disabled={currentPage <= 0}
           onClick={() => setCurrentPage((prev) => Math.max(0, prev - 1))}
-          className="py-2 px-5 font-medium bg-yellow-400 rounded-lg"
+          className="py-2 px-5 font-medium bg-yellow-400 hover:bg-yellow-500 rounded-lg disabled:opacity-50"
         >
           Previous
         </button>
-        <p className="font-medium">Page {currentPage + 1}</p>
+        <p className="font-medium text-gray-900 dark:text-white">Page {currentPage + 1}</p>
         <button
           disabled={currentPage >= totalPage - 1}
           onClick={() =>
             setCurrentPage((prev) => Math.min(totalPage - 1, prev + 1))
           }
-          className="py-2 px-5 font-medium bg-yellow-400 rounded-lg"
+          className="py-2 px-5 font-medium bg-yellow-400 hover:bg-yellow-500 rounded-lg disabled:opacity-50"
         >
           Next
         </button>

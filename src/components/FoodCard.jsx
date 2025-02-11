@@ -13,7 +13,7 @@ const FoodCard = ({ food }) => {
     price,
   } = food;
   return (
-    <div className="flex flex-col bg-white border border-slate-200 rounded-lg h-full">
+    <div className="flex flex-col bg-white dark:bg-gray-800 border border-slate-200 dark:border-gray-700 rounded-lg h-full">
       <div className="h-56 m-2.5 overflow-hidden text-white rounded-md">
         <img
           src={foodImage}
@@ -23,31 +23,31 @@ const FoodCard = ({ food }) => {
       </div>
 
       <div className="flex-grow p-4">
-        <p className="text-sm bg-yellow-100 font-medium dark:text-black w-fit px-3 py-1 rounded-full mb-2">
+        <p className="text-sm bg-yellow-100 dark:bg-yellow-200 font-medium text-black w-fit px-3 py-1 rounded-full mb-2">
           {foodCategory}
         </p>
 
-        <h6 className="text-xl font-semibold text-slate-800 mb-2">
+        <h6 className="text-xl font-semibold text-slate-800 dark:text-white mb-2">
           {foodName}
         </h6>
 
-        <p className="text-sm text-slate-600 leading-relaxed line-clamp-2">
+        <p className="text-sm text-slate-600 dark:text-slate-300 leading-relaxed line-clamp-2">
           {description}
         </p>
 
-        <p className="flex items-center font-medium text-sm text-slate-800 gap-2 mt-4">
+        <p className="flex items-center font-medium text-sm text-slate-800 dark:text-slate-200 gap-2 mt-4">
           <BoxIcon className="text-xl" /> Quantity: {quantity}
         </p>
       </div>
 
       <div className="p-4 flex items-center justify-between">
-        <p className="text-lg font-medium text-slate-800 flex items-center gap-1">
+        <p className="text-lg font-medium text-slate-800 dark:text-white flex items-center gap-1">
           <FaDollarSign /> {price}
         </p>
 
         <Link
           to={`/food/details/${_id}`}
-          className="rounded-md bg-yellow-500 py-2 px-4 border border-transparent text-sm text-black dark:text-white transition-all shadow-md hover:shadow-lg"
+          className="rounded-md bg-yellow-500 hover:bg-yellow-600 py-2 px-4 border border-transparent text-sm text-black dark:text-white transition-all shadow-md hover:shadow-lg"
           type="button"
         >
           View Food

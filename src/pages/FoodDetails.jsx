@@ -5,7 +5,7 @@ const FoodDetails = () => {
   const { data: food } = useLoaderData();
   return (
     <div>
-      <div className="w-4/5 mx-auto p-6 my-6 bg-white dark:bg-[#1f2937] rounded-lg">
+      <div className="w-4/5 mx-auto p-6 my-20 bg-white dark:bg-[#1f2937] rounded-lg">
         <div className="flex flex-col md:flex-row items-center gap-6">
           <div className="w-full md:w-1/2">
             <img
@@ -16,7 +16,7 @@ const FoodDetails = () => {
           </div>
 
           <div className="w-full md:w-1/2 space-y-4">
-            <h1 className="text-2xl md:text-3xl font-bold text-gray-800">
+            <h1 className="text-2xl md:text-3xl font-bold text-gray-800 dark:text-white">
               {food?.foodName}
             </h1>
             <p className="text-sm bg-yellow-100  dark:text-black font-medium w-fit px-3 py-1 rounded-full">

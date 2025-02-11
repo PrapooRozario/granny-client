@@ -65,152 +65,152 @@ const UserFoodCard = ({ food }) => {
     },
   });
   return (
-    <div className="flex flex-col bg-white border border-slate-200 rounded-lg h-full">
-      <div className="h-56 m-2.5 overflow-hidden text-white dark:text-black rounded-md">
-        <img
-          src={food?.foodImage}
-          alt="card-image"
-          className="w-full h-full object-cover"
-        />
+    <div className="flex flex-col bg-white dark:bg-gray-800 border border-slate-200 dark:border-gray-700 rounded-lg h-full">
+      <div className="h-56 m-2.5 overflow-hidden rounded-md">
+      <img
+        src={food?.foodImage}
+        alt="card-image"
+        className="w-full h-full object-cover"
+      />
       </div>
 
       <div className="flex-grow p-4">
-        <p className="text-sm bg-yellow-100 dark:text-black font-medium w-fit px-3 py-1 rounded-full mb-2">
-          {food?.foodCategory}
-        </p>
+      <p className="text-sm bg-yellow-100 dark:bg-yellow-200 text-black font-medium w-fit px-3 py-1 rounded-full mb-2">
+        {food?.foodCategory}
+      </p>
 
-        <h6 className="text-xl font-semibold text-slate-800 mb-2">
-          {food?.foodName}
-        </h6>
+      <h6 className="text-xl font-semibold text-slate-800 dark:text-white mb-2">
+        {food?.foodName}
+      </h6>
 
-        <p className="text-sm text-slate-600 leading-relaxed line-clamp-2">
-          {food?.description}
-        </p>
+      <p className="text-sm text-slate-600 dark:text-slate-300 leading-relaxed line-clamp-2">
+        {food?.description}
+      </p>
 
-        <p className="flex items-center font-medium text-sm text-slate-800 gap-2 mt-4">
-          <BoxIcon className="text-xl" /> Quantity: {food?.quantity}
-        </p>
+      <p className="flex items-center font-medium text-sm text-slate-800 dark:text-white gap-2 mt-4">
+        <BoxIcon className="text-xl" /> Quantity: {food?.quantity}
+      </p>
       </div>
 
       <div className="p-4 flex items-center justify-between">
-        <p className="flex items-center text-lg font-medium text-slate-800 gap-1">
-          <FaDollarSign /> {food?.price}
-        </p>
+      <p className="flex items-center text-lg font-medium text-slate-800 dark:text-white gap-1">
+        <FaDollarSign /> {food?.price}
+      </p>
 
-        <DialogRoot>
-          <DialogTrigger asChild>
+      <DialogRoot>
+        <DialogTrigger asChild>
+        <button
+          className="rounded-md bg-yellow-500 hover:bg-yellow-600 py-2 px-4 border border-transparent text-center text-sm text-black transition-all shadow-md hover:shadow-lg"
+          type="button"
+        >
+          Update
+        </button>
+        </DialogTrigger>
+        <DialogContent className="dark:bg-gray-800">
+        <DialogHeader>
+          <DialogTitle className="text-center text-black dark:text-white font-bold text-3xl">
+          Update Food
+          </DialogTitle>
+        </DialogHeader>
+        <DialogBody>
+          <form onSubmit={handleSubmit} className="mt-4">
+          <Field label="Food Name" required className="mb-6">
+            <Input
+            name="foodName"
+            defaultValue={food?.foodName}
+            className="px-3 py-2 border border-gray-300 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400 rounded-lg w-full"
+            placeholder="Enter the food name"
+            />
+          </Field>
+
+          <Field label="Food Image" required className="mb-6">
+            <Input
+            name="foodImage"
+            defaultValue={food?.foodImage}
+            className="px-3 py-2 border border-gray-300 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400 rounded-lg w-full"
+            placeholder="Enter the food image"
+            />
+          </Field>
+
+          <Field label="Food Category" required className="mb-6">
+            <Input
+            name="foodCategory"
+            defaultValue={food?.foodCategory}
+            className="px-3 py-2 border border-gray-300 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400 rounded-lg w-full"
+            placeholder="Enter the food category"
+            />
+          </Field>
+
+          <Field label="Quantity" required className="mb-6">
+            <Input
+            name="quantity"
+            defaultValue={food?.quantity}
+            type="number"
+            className="px-3 py-2 border border-gray-300 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400 rounded-lg w-full"
+            placeholder="Enter the quantity"
+            />
+          </Field>
+
+          <Field label="Price" required className="mb-6">
+            <Input
+            name="price"
+            type="number"
+            defaultValue={food?.price}
+            className="px-3 py-2 border border-gray-300 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400 rounded-lg w-full"
+            placeholder="Enter the price"
+            />
+          </Field>
+
+          <Field label="Food Origin" required className="mb-6">
+            <Input
+            name="foodOrigin"
+            defaultValue={food?.foodOrigin}
+            className="px-3 py-2 border border-gray-300 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400 rounded-lg w-full"
+            placeholder="Enter the food origin"
+            />
+          </Field>
+
+          <Field label="Description" required className="mb-6">
+            <Textarea
+            name="description"
+            defaultValue={food?.description}
+            className="p-2 border border-gray-300 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400 rounded-lg w-full"
+            placeholder="Write a description..."
+            ></Textarea>
+          </Field>
+
+          <DialogFooter>
+            <DialogActionTrigger asChild>
             <button
-              className="rounded-md bg-yellow-500 py-2 px-4 border border-transparent text-center text-sm text-black transition-all shadow-md hover:shadow-lg"
+              className="rounded-md bg-slate-300 dark:bg-slate-600 py-2 px-4 border border-transparent text-center text-sm text-black dark:text-white transition-all shadow-md hover:shadow-lg"
               type="button"
             >
-              Update
+              Cancel
             </button>
-          </DialogTrigger>
-          <DialogContent>
-            <DialogHeader>
-              <DialogTitle className="text-center text-black dark:text-white  font-bold text-3xl">
-                Update Food
-              </DialogTitle>
-            </DialogHeader>
-            <DialogBody>
-              <form onSubmit={handleSubmit} className="mt-4 dark:text-white">
-                <Field label="Food Name" required className="mb-6">
-                  <Input
-                    name="foodName"
-                    defaultValue={food?.foodName}
-                    className="px-3 py-2 border border-gray-300 dark:placeholder-white  rounded-lg w-full"
-                    placeholder="Enter the food name"
-                  />
-                </Field>
+            </DialogActionTrigger>
+            <button
+            type="submit"
+            className="rounded-md flex items-center gap-2 bg-yellow-500 hover:bg-yellow-600 py-2 px-4 border border-transparent text-center text-sm text-black transition-all shadow-md hover:shadow-lg"
+            >
+            {isPending && (
+              <img
+              className="w-4 h-4 animate-spin"
+              src="https://www.svgrepo.com/show/448500/loading.svg"
+              alt="Loading icon"
+              />
+            )}
+            Save
+            </button>
+          </DialogFooter>
+          </form>
+        </DialogBody>
 
-                <Field label="Food Image" required className="mb-6">
-                  <Input
-                    name="foodImage"
-                    defaultValue={food?.foodImage}
-                    className="px-3 py-2 border border-gray-300 dark:placeholder-white  rounded-lg w-full"
-                    placeholder="Enter the food image"
-                  />
-                </Field>
-
-                <Field label="Food Category" required className="mb-6">
-                  <Input
-                    name="foodCategory"
-                    defaultValue={food?.foodCategory}
-                    className="px-3 py-2 border border-gray-300 dark:placeholder-white  rounded-lg w-full"
-                    placeholder="Enter the food category"
-                  />
-                </Field>
-
-                <Field label="Quantity" required className="mb-6">
-                  <Input
-                    name="quantity"
-                    defaultValue={food?.quantity}
-                    type="number"
-                    className="px-3 py-2 border border-gray-300 dark:placeholder-white  rounded-lg w-full"
-                    placeholder="Enter the quantity"
-                  />
-                </Field>
-
-                <Field label="Price" required className="mb-6">
-                  <Input
-                    name="price"
-                    type="number"
-                    defaultValue={food?.price}
-                    className="px-3 py-2 border border-gray-300 dark:placeholder-white  rounded-lg w-full"
-                    placeholder="Enter the price"
-                  />
-                </Field>
-
-                <Field label="Food Origin" required className="mb-6">
-                  <Input
-                    name="foodOrigin"
-                    defaultValue={food?.foodOrigin}
-                    className="px-3 py-2 border border-gray-300 dark:placeholder-white  rounded-lg w-full"
-                    placeholder="Enter the food origin"
-                  />
-                </Field>
-
-                <Field label="Description" required className="mb-6">
-                  <Textarea
-                    name="description"
-                    defaultValue={food?.description}
-                    className="p-2 border border-gray-300 dark:placeholder-white  rounded-lg w-full"
-                    placeholder="Write a description..."
-                  ></Textarea>
-                </Field>
-
-                <DialogFooter>
-                  <DialogActionTrigger asChild>
-                    <button
-                      className="rounded-md bg-slate-300 py-2 px-4 border border-transparent text-center text-sm text-black transition-all shadow-md hover:shadow-lg"
-                      type="button"
-                    >
-                      Cancel
-                    </button>
-                  </DialogActionTrigger>
-                  <button
-                    type="submit"
-                    className="rounded-md flex items-center gap-2 bg-yellow-500 py-2 px-4 border border-transparent text-center text-sm text-black transition-all shadow-md hover:shadow-lg"
-                  >
-                    {isPending && (
-                      <img
-                        className="w-4 h-4 animate-spin"
-                        src="https://www.svgrepo.com/show/448500/loading.svg"
-                        alt="Loading icon"
-                      />
-                    )}
-                    Save
-                  </button>
-                </DialogFooter>
-              </form>
-            </DialogBody>
-
-            <DialogCloseTrigger />
-          </DialogContent>
-        </DialogRoot>
+        <DialogCloseTrigger />
+        </DialogContent>
+      </DialogRoot>
       </div>
     </div>
-  );
+    );
 };
 UserFoodCard.propTypes = {
   food: PropTypes.object,

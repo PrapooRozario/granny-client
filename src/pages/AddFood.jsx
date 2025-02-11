@@ -50,74 +50,74 @@ const AddFood = () => {
     },
   });
   return (
-    <div className="flex items-center justify-center">
+    <div className="flex items-center my-10 justify-center">
       <form
         onSubmit={handleSubmit}
-        className="bg-white rounded-xl p-10 w-full max-w-lg"
+        className="bg-white dark:bg-gray-800 rounded-xl p-10 w-full max-w-lg"
       >
-        <h1 className="text-center font-bold text-3xl mb-8 text-gray-800">
+        <h1 className="text-center font-bold text-3xl mb-8 text-gray-800 dark:text-white">
           Add Food
         </h1>
 
-        <Field label="Food Name" required className="mb-6 dark:text-black">
+        <Field label="Food Name" required className="mb-6 text-gray-800 dark:text-white">
           <Input
             name="foodName"
-            className="px-3 py-2 border border-gray-300 rounded-lg w-full"
+            className="px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-lg w-full dark:bg-gray-700 dark:text-white"
             placeholder="Enter the food name"
           />
         </Field>
 
-        <Field label="Food Image" required className="mb-6  dark:text-black">
+        <Field label="Food Image" required className="mb-6 text-gray-800 dark:text-white">
           <Input
             name="foodImage"
-            className="px-3 py-2 border border-gray-300 rounded-lg w-full"
+            className="px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-lg w-full dark:bg-gray-700 dark:text-white"
             placeholder="Enter the food image"
           />
         </Field>
 
-        <Field label="Food Category" required className="mb-6  dark:text-black">
+        <Field label="Food Category" required className="mb-6 text-gray-800 dark:text-white">
           <Input
             name="foodCategory"
-            className="px-3 py-2 border border-gray-300 rounded-lg w-full"
+            className="px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-lg w-full dark:bg-gray-700 dark:text-white"
             placeholder="Enter the food category"
           />
         </Field>
 
-        <Field label="Quantity" required className="mb-6  dark:text-black">
+        <Field label="Quantity" required className="mb-6 text-gray-800 dark:text-white">
           <Input
             name="quantity"
             type="number"
-            className="px-3 py-2 border border-gray-300 rounded-lg w-full"
+            className="px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-lg w-full dark:bg-gray-700 dark:text-white"
             placeholder="Enter the quantity"
           />
         </Field>
 
-        <Field label="Price" required className="mb-6  dark:text-black">
+        <Field label="Price" required className="mb-6 text-gray-800 dark:text-white">
           <Input
             name="price"
             type="number"
-            className="px-3 py-2 border border-gray-300 rounded-lg w-full"
+            className="px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-lg w-full dark:bg-gray-700 dark:text-white"
             placeholder="Enter the price"
           />
         </Field>
 
-        <Field label="Food Origin" required className="mb-6  dark:text-black">
+        <Field label="Food Origin" required className="mb-6 text-gray-800 dark:text-white">
           <Input
             name="foodOrigin"
-            className="px-3 py-2 border border-gray-300 rounded-lg w-full"
+            className="px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-lg w-full dark:bg-gray-700 dark:text-white"
             placeholder="Enter the food origin"
           />
         </Field>
 
-        <Field label="Description" required className="mb-6  dark:text-black">
+        <Field label="Description" required className="mb-6 text-gray-800 dark:text-white">
           <Textarea
             name="description"
-            className="p-2"
+            className="p-2 dark:bg-gray-700 dark:text-white dark:border-gray-600"
             placeholder="Write a description..."
           ></Textarea>
         </Field>
 
-        <button className="bg-yellow-500 w-full gap-2 flex items-center justify-center text-black font-medium py-2 px-4 rounded-lg hover:bg-yellow-600 transition">
+        <button className="bg-yellow-500 w-full gap-2 flex items-center justify-center text-black dark:text-white font-medium py-2 px-4 rounded-lg hover:bg-yellow-600 transition">
           {isPending && (
             <img
               className="w-5 h-5 animate-spin"

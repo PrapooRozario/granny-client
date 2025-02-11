@@ -60,45 +60,53 @@ const Register = () => {
     <div>
       <form
         onSubmit={handleRegister}
-        className="lg:w-2/5 md:w-7/12 sm:w-3/5 mx-auto py-10 px-10 my-8 rounded-xl"
+        className="lg:w-2/5 md:w-7/12 sm:w-3/5 mx-auto py-10 px-10 my-8 rounded-xl dark:bg-gray-800 bg-white"
       >
-        <h1 className="text-center font-semibold text-2xl mb-10 text-black">
+        <h1 className="text-center font-semibold text-2xl mb-10 text-black dark:text-white">
           Register Your Account
         </h1>
 
         <Field label="Name" required className="mb-6">
-          <Input name="name" className="px-2" placeholder="Enter your name" />
+          <Input 
+            name="name" 
+            className="px-2 dark:bg-gray-700 dark:text-white" 
+            placeholder="Enter your name" 
+          />
         </Field>
 
         <Field label="Photo URL" required className="mb-6">
           <Input
             name="photo"
-            className="px-2"
+            className="px-2 dark:bg-gray-700 dark:text-white"
             placeholder="Enter your photo url"
           />
         </Field>
 
         <Field label="Email" required className="mb-6">
-          <Input className="px-2" name="email" placeholder="Enter your email" />
+          <Input 
+            className="px-2 dark:bg-gray-700 dark:text-white" 
+            name="email" 
+            placeholder="Enter your email" 
+          />
         </Field>
         <Field label="Password" required>
           <PasswordInput
             name="password"
-            className="px-2"
+            className="px-2 dark:bg-gray-700 dark:text-white"
             placeholder="Enter your password"
-          ></PasswordInput>
+          />
           <p className="text-sm text-red-500">{error?.pwdError}</p>
         </Field>
-        <button className="bg-yellow-400 w-full py-2 rounded-xl mt-6">
+        <button className="bg-yellow-400 hover:bg-yellow-500 w-full py-2 rounded-xl mt-6 text-black">
           Register
         </button>
-        <p className="text-sm mt-2 text-center">
-          Already Have an Account ? {""}
-          <Link to="/login" className="text-yellow-600">
+        <p className="text-sm mt-2 text-center dark:text-white">
+          Already Have an Account? {" "}
+          <Link to="/login" className="text-yellow-600 hover:text-yellow-700">
             Login
           </Link>
         </p>
-        <div className="divider text-black">OR</div>
+        <div className="divider text-black dark:text-white">OR</div>
         <button
           onClick={() =>
             googleAuth()
@@ -114,10 +122,10 @@ const Register = () => {
                 });
               })
           }
-          className="flex items-center justify-center rounded-full gap-2 border px-4 py-2 w-full"
+          className="flex items-center justify-center rounded-full gap-2 border px-4 py-2 w-full dark:bg-gray-700 dark:text-white dark:border-gray-600 hover:bg-gray-100 dark:hover:bg-gray-600"
           type="button"
         >
-          <FaGoogle></FaGoogle> Google
+          <FaGoogle /> Google
         </button>
       </form>
     </div>

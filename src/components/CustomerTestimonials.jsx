@@ -24,32 +24,29 @@ const CustomerTestimonials = () => {
         </p>
       </div>
       <div>
-        <Marquee
-          gradient={true}
-          gradientWidth={100}
-        >
+        <Marquee gradient={true} gradientWidth={100}>
           {testimonials?.map((testimonial) => (
             <div key={testimonial._id} className="ml-6">
-              <div className="flex w-full p-4 max-w-lg flex-col rounded-lg bg-white shadow-sm border border-slate-200 my-6">
-                <div className="flex items-center gap-4 text-black">
+              <div className="flex w-full p-4 max-w-lg flex-col rounded-lg dark:bg-gray-800 bg-white border dark:border-gray-700 border-slate-200 my-6">
+                <div className="flex items-center gap-4 dark:text-white text-black">
                   <img
                     src={testimonial?.image}
-                    alt="Tania Andrew"
-                    className="relative inline-block h-[58px] w-[58px] !rounded-full  object-cover object-center"
+                    alt={testimonial?.name}
+                    className="relative inline-block h-[58px] w-[58px] !rounded-full object-cover object-center"
                   />
                   <div className="flex w-full flex-col">
                     <div className="flex items-center justify-between">
-                      <h5 className="text-xl font-semibold text-black">
+                      <h5 className="text-xl font-semibold dark:text-white text-black">
                         {testimonial?.name}
                       </h5>
                     </div>
-                    <p className="text-xs uppercase font-bold text-black/60 mt-0.5">
+                    <p className="text-xs uppercase font-bold dark:text-white/60 text-black/60 mt-0.5">
                       {testimonial?.profession}
                     </p>
                   </div>
                 </div>
                 <div className="mt-6">
-                  <p className="text-base text-black/60 font-light leading-normal">
+                  <p className="text-base dark:text-white/60 text-black/60 font-light leading-normal">
                     "{testimonial?.testimonial}"
                   </p>
                 </div>

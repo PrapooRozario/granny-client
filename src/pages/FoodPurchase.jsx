@@ -89,12 +89,12 @@ const FoodPurchase = () => {
   });
 
   return (
-    <div className="flex items-center justify-center">
+    <div className="flex items-center my-10 justify-center">
       <form
         onSubmit={handleSubmit}
-        className="bg-white rounded-xl p-10 w-full max-w-lg"
+        className="bg-white dark:bg-gray-800 rounded-xl p-10 w-full max-w-lg"
       >
-        <h1 className="text-center font-bold text-3xl mb-8 text-gray-800">
+        <h1 className="text-center font-bold text-3xl mb-8 text-gray-800 dark:text-white">
           Purchase Now
         </h1>
 
@@ -102,7 +102,9 @@ const FoodPurchase = () => {
           <Input
             name="foodName"
             value={food?.foodName}
-            className="px-3 py-2 border border-gray-300 dark:placeholder-black dark:text-black rounded-lg w-full"
+            className="px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-lg w-full
+            bg-white dark:bg-gray-700 text-gray-900 dark:text-white 
+            placeholder-gray-500 dark:placeholder-gray-400"
             placeholder="Enter the food name"
           />
         </Field>
@@ -112,7 +114,9 @@ const FoodPurchase = () => {
             name="price"
             type="number"
             value={food?.price}
-            className="px-3 py-2 border border-gray-300 dark:placeholder-black dark:text-black rounded-lg w-full"
+            className="px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-lg w-full
+            bg-white dark:bg-gray-700 text-gray-900 dark:text-white 
+            placeholder-gray-500 dark:placeholder-gray-400"
             placeholder="Enter the price"
           />
         </Field>
@@ -122,7 +126,9 @@ const FoodPurchase = () => {
             name="quantity"
             type="number"
             defaultValue={food?.quantity}
-            className="px-3 py-2 border border-gray-300 dark:placeholder-black dark:text-black rounded-lg w-full"
+            className="px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-lg w-full
+            bg-white dark:bg-gray-700 text-gray-900 dark:text-white 
+            placeholder-gray-500 dark:placeholder-gray-400"
             placeholder="Enter the quantity"
           />
         </Field>
@@ -130,7 +136,9 @@ const FoodPurchase = () => {
         <Field label="Buyer Name" required className="mb-6">
           <Input
             name="buyer_name"
-            className="px-3 py-2 border border-gray-300 dark:placeholder-black dark:text-black rounded-lg w-full"
+            className="px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-lg w-full
+            bg-white dark:bg-gray-700 text-gray-900 dark:text-white 
+            placeholder-gray-500 dark:placeholder-gray-400"
             placeholder="Enter the name"
             value={user?.displayName}
           />
@@ -140,7 +148,9 @@ const FoodPurchase = () => {
           <Input
             name="buyer_email"
             value={user?.email}
-            className="px-3 py-2 border border-gray-300 dark:placeholder-black dark:text-black rounded-lg w-full"
+            className="px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-lg w-full
+            bg-white dark:bg-gray-700 text-gray-900 dark:text-white 
+            placeholder-gray-500 dark:placeholder-gray-400"
             placeholder="Enter the email"
           />
         </Field>
@@ -149,7 +159,10 @@ const FoodPurchase = () => {
           disabled={
             food?.quantity <= 0 || food?.added_by?.email === user?.email
           }
-          className="bg-yellow-500 w-full gap-2 flex items-center justify-center text-black font-medium py-2 px-4 rounded-lg hover:bg-yellow-600 transition"
+          className="bg-yellow-500 dark:bg-yellow-600 w-full gap-2 flex items-center justify-center 
+          text-black dark:text-white font-medium py-2 px-4 rounded-lg 
+          hover:bg-yellow-600 dark:hover:bg-yellow-700 transition
+          disabled:opacity-50 disabled:cursor-not-allowed"
         >
           {isPending && (
             <img

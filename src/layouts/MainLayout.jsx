@@ -14,15 +14,15 @@ const MainLayout = () => {
           <div className="border-gray-300 h-16 w-16 animate-spin rounded-full border-8 border-t-blue-600" />
         </div>
       ) : (
-        <div className="w-11/12 mx-auto">
+        <div className="w-11/12 mx-auto h-full">
           <nav>
-            <Navbar></Navbar>
+            <Navbar />
           </nav>
           <main className="min-h-[calc(100vh-231px)]">
-            <Outlet></Outlet>
+            <Outlet />
           </main>
           <footer>
-            <Footer></Footer>
+            <Footer />
           </footer>
         </div>
       )}
