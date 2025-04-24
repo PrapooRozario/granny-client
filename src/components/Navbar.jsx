@@ -21,12 +21,6 @@ const Navbar = () => {
             className="menu menu-sm dropdown-content *:text-black *:font-medium *:text-base bg-yellow-100 rounded-lg px-4 py-4 space-y-2 mt-4 z-[2] w-56 "
           >
             <NavLink
-              to="/"
-              className="hover:text-yellow-600 transition duration-300"
-            >
-              Home
-            </NavLink>
-            <NavLink
               to="/all/foods"
               className="hover:text-yellow-600 transition duration-300"
             >
@@ -46,12 +40,7 @@ const Navbar = () => {
       </div>
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal *:text-black *:dark:text-white *:font-medium *:text-base gap-6 px-1">
-          <NavLink
-            to="/"
-            className="hover:text-yellow-600 transition duration-300"
-          >
-            Home
-          </NavLink>
+        
           <NavLink
             to="/all/foods"
             className="hover:text-yellow-600 transition duration-300"

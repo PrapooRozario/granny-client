@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 const BannerContent = ({ bgImage, title, subtitle }) => {
   return (
     <div
-      className="hero min-h-[calc(100vh-150px)] font-ubuntu"
+      className="hero min-h-[calc(100vh-150px)] font-ubuntu rounded-3xl"
       style={{
         backgroundImage: `url(${bgImage})`,
       }}

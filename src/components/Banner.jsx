@@ -37,7 +37,7 @@ const Banner = () => {
         pagination={{ clickable: true }}
         className="w-full"
       >
-        <SwiperSlide>
+        <SwiperSlide className="rounded-3xl">
           <BannerContent
             bgImage={
               "https://transcode-v2.app.engoo.com/image/fetch/f_auto,c_lfill,w_300,dpr_3/https://assets.app.engoo.com/images/x7jPxj9YtJfv97hnC3mMmQog5VwuYojZ7tlrhczGXIV.jpeg"
@@ -48,7 +48,7 @@ const Banner = () => {
             }
           ></BannerContent>
         </SwiperSlide>
-        <SwiperSlide>
+        <SwiperSlide  className="rounded-3xl">
           <BannerContent
             bgImage={
               "https://royalmahal.co.uk/storage/2023/01/indian-restaurant-scaled-e1670322083921-1024x692.jpg"
@@ -59,7 +59,7 @@ const Banner = () => {
             }
           ></BannerContent>
         </SwiperSlide>
-        <SwiperSlide>
+        <SwiperSlide  className="rounded-3xl">
           <BannerContent
             bgImage={
               "https://i0.wp.com/www.drdavidludwig.com/wp-content/uploads/2017/01/1-RIS_6IbCLYv1X3bzYW1lmA.jpeg?fit=800%2C552&ssl=1"

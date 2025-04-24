@@ -5,7 +5,7 @@ import FoodCard from "./FoodCard";
 const ExpensiveDishes = () => {
   const Axios = useAxios();
 
-  const { data: foods, isLoading } = useQuery({
+  const { data: foods = [], isLoading } = useQuery({
     queryKey: ["foods"],
     queryFn: async () => {
       const { data } = await Axios.get("/foods");
