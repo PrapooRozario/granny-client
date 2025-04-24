@@ -10,17 +10,14 @@ const Footer = () => {
   return (
     <footer className="w-full p-8">
       <div className="flex flex-row flex-wrap items-center justify-center gap-y-6 gap-x-12 text-center md:justify-between">
-        <Link to="/" className="text-2xl text-black dark:text-white font-semibold">
+        <Link
+          to="/"
+          className="text-2xl text-black dark:text-white font-semibold"
+        >
           Gra<span className="text-yellow-500">nny</span>
         </Link>
 
         <ul className="flex flex-wrap items-center gap-y-2 gap-x-8">
-          <NavLink
-            to="/"
-            className="text-gray-800 dark:text-gray-200 hover:text-yellow-600 transition duration-300"
-          >
-            Home
-          </NavLink>
           <NavLink
             to="/all/foods"
             className="text-gray-800 dark:text-gray-200 hover:text-yellow-600 transition duration-300"
@@ -51,7 +48,10 @@ const Footer = () => {
       </div>
       <p className="block mb-4 text-sm text-center text-gray-600 dark:text-gray-400 md:mb-0 border-t border-gray-200 dark:border-gray-700 mt-4 pt-4">
         Copyright © 2024&nbsp;
-        <Link to="/" className="hover:text-yellow-600 transition duration-300">Granny</Link>.
+        <Link to="/" className="hover:text-yellow-600 transition duration-300">
+          Granny
+        </Link>
+        .
       </p>
     </footer>
   );
